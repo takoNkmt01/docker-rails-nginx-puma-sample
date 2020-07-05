@@ -3,6 +3,8 @@ services:
   app:
     build:
       context: .
+    tty: true
+    stdin_open: true
     env_file:
       - ./environments/db.env
     command: bundle exec puma -C config/puma.rb
